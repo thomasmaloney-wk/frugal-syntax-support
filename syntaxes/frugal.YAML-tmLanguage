@@ -42,7 +42,7 @@ patterns:
     '2': {name: variable.other.namespace.frugal}
 
 - comment: begin the definition list
-  begin: (?=(struct|s?enum|union|service|const|typedef|exception)\b)
+  begin: (?=(struct|s?enum|union|service|const|typedef|scope|exception)\b)
   end: '(?x)$.^ # this regex should never end'
   patterns:
   - include: '#comments'
@@ -158,6 +158,14 @@ patterns:
       patterns:
       - include: '#comments'
       - include: '#field'
+  - name: meta.scope.frugal
+    begin: (?<!\S)(scope)(?!\S)(?:\s+([a-zA-z_][\w.]*)(?:\s+(prefix)(?:\s+([a-zA-Z_][\w.]*))?)?({([a-zA-Z^}]+)})?\s*(?![^\s{]))?
+    beginCaptures:
+      '1': {name: keyword.other.scope.frugal}
+      '2': {name: entity.name.type.scope.frugal}
+      '3': {name: keyword.other.scope.prefix.frugal}
+      '4': {name: entity.other.prefixe-topic.frugal}
+    end: (?<=\})
   - name: meta.service.frugal
     begin: (?<!\S)(service)(?!\S)(?:\s+([a-zA-z_][\w.]*)(?:\s+(extends)(?:\s+([a-zA-Z_][\w.]*))?)?\s*(?![^\s{]))?
     beginCaptures:
