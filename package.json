@@ -1,13 +1,12 @@
 {
-  "name": "thrift-syntax-support",
-  "displayName": "Thrift Syntax Support",
-  "description": "thrift syntax support",
+  "name": "frugal-syntax-support",
+  "displayName": "Frugal Syntax Support",
+  "description": "frugal syntax support",
   "version": "0.0.3",
-  "publisher": "mrkou47",
-  "icon": "images/logo.png",
+  "publisher": "Thomas Maloney",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MrKou47/thrift-syntax-support.git"
+    "url": "https://github.com/thomasmaloney-wk/frugal-syntax-support.git"
   },
   "engines": {
     "vscode": "^1.30.0"
@@ -16,23 +15,23 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onLanguage:thrift"
+    "onLanguage:frugal"
   ],
   "main": "./out/extension",
   "contributes": {
     "languages": [
       {
-        "id": "thrift",
+        "id": "frugal",
         "extensions": [
-          ".thrift"
+          ".frugal"
         ]
       }
     ],
     "grammars": [
       {
-        "language": "thrift",
-        "scopeName": "source.thrift",
-        "path": "./syntaxes/thrift.tmLanguage"
+        "language": "frugal",
+        "scopeName": "source.frugal",
+        "path": "./syntaxes/frugal.tmLanguage"
       }
     ]
   },

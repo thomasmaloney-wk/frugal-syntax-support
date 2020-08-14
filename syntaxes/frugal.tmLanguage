@@ -4,12 +4,12 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>thrift</string>
+		<string>frugal</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~T</string>
 	<key>name</key>
-	<string>Thrift</string>
+	<string>Frugal</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -22,28 +22,28 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.include.thrift</string>
+					<string>keyword.other.include.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>string.quoted.thrift</string>
+					<string>string.quoted.frugal</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.thrift</string>
+					<string>punctuation.definition.string.begin.frugal</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.thrift</string>
+					<string>punctuation.definition.string.end.frugal</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?&lt;!\S)(include)(?!\S)(?:\s+((['"])(?&gt;.*?(\3))))?</string>
 			<key>name</key>
-			<string>meta.include.thrift</string>
+			<string>meta.include.frugal</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -51,28 +51,28 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.cpp-include.thrift</string>
+					<string>keyword.other.cpp-include.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>string.quoted.thrift</string>
+					<string>string.quoted.frugal</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.thrift</string>
+					<string>punctuation.definition.string.begin.frugal</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.thrift</string>
+					<string>punctuation.definition.string.end.frugal</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?&lt;!\S)(cpp_include)(?!\S)(?:\s+((['"])(?&gt;.*?(\3))))?</string>
 			<key>name</key>
-			<string>meta.cpp-include.thrift</string>
+			<string>meta.cpp-include.frugal</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -80,23 +80,23 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.namespace.thrift</string>
+					<string>keyword.other.namespace.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.other.namespace-language.thrift</string>
+					<string>support.other.namespace-language.frugal</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.namespace.thrift</string>
+					<string>variable.other.namespace.frugal</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?&lt;!\S)(namespace)(?!\S)(?:\s+([a-zA-Z_][\w.]*)(?:\s+([a-zA-Z_][\w.]*))?)?</string>
 			<key>name</key>
-			<string>meta.namespace.thrift</string>
+			<string>meta.namespace.frugal</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -104,18 +104,18 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.namespace.thrift</string>
+					<string>keyword.other.namespace.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.namespace.thrift</string>
+					<string>variable.other.namespace.frugal</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?&lt;!\S)((?:php|xsd)_namespace)(?!\S)(?:\s+([a-zA-Z_][\w.]*))?</string>
 			<key>name</key>
-			<string>meta.namespace.thrift</string>
+			<string>meta.namespace.frugal</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -123,12 +123,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.deprecated.namespace.thrift</string>
+					<string>invalid.deprecated.namespace.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.namespace.thrift</string>
+					<string>variable.other.namespace.frugal</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -155,23 +155,23 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.const.thrift</string>
+							<string>keyword.other.const.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.const.thrift</string>
+							<string>storage.type.const.frugal</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.const.thrift</string>
+							<string>variable.other.const.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>$|^</string>
 					<key>name</key>
-					<string>meta.const.thrift</string>
+					<string>meta.const.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -192,23 +192,23 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.typedef.thrift</string>
+							<string>keyword.other.typedef.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.typedef.thrift</string>
+							<string>storage.type.typedef.frugal</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.typedef.thrift</string>
+							<string>variable.other.typedef.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>$|^</string>
 					<key>name</key>
-					<string>meta.typedef.thrift</string>
+					<string>meta.typedef.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -225,25 +225,25 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.union.thrift</string>
+							<string>keyword.other.union.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.union.thrift</string>
+							<string>entity.name.type.union.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.union.thrift</string>
+					<string>meta.union.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>(?&lt;!\S)xsd_all(?!\S)</string>
 							<key>name</key>
-							<string>keyword.other.xsd-all.thrift</string>
+							<string>keyword.other.xsd-all.frugal</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -253,7 +253,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.union.begin.thrift</string>
+									<string>punctuation.section.union.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -263,7 +263,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.union.end.thrift</string>
+									<string>punctuation.section.union.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -288,18 +288,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.enum.thrift</string>
+							<string>keyword.other.enum.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.enum.thrift</string>
+							<string>entity.name.type.enum.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.enum.thrift</string>
+					<string>meta.enum.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -310,7 +310,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.enum.begin.thrift</string>
+									<string>punctuation.section.enum.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -320,7 +320,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.enum.end.thrift</string>
+									<string>punctuation.section.enum.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -331,12 +331,12 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>variable.other.enum.thrift</string>
+											<string>variable.other.enum.frugal</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>constant.numeric.integer.thrift</string>
+											<string>constant.numeric.integer.frugal</string>
 										</dict>
 									</dict>
 									<key>match</key>
@@ -350,7 +350,7 @@
 									<key>match</key>
 									<string>\S</string>
 									<key>name</key>
-									<string>invalid.illegal.thrift</string>
+									<string>invalid.illegal.frugal</string>
 								</dict>
 							</array>
 						</dict>
@@ -364,18 +364,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.senum.thrift</string>
+							<string>keyword.other.senum.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.senum.thrift</string>
+							<string>entity.name.type.senum.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.senum.thrift</string>
+					<string>meta.senum.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -386,7 +386,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.senum.begin.thrift</string>
+									<string>punctuation.section.senum.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -396,7 +396,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.senum.end.thrift</string>
+									<string>punctuation.section.senum.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -407,7 +407,7 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>variable.other.senum.thrift</string>
+											<string>variable.other.senum.frugal</string>
 										</dict>
 									</dict>
 									<key>match</key>
@@ -421,7 +421,7 @@
 									<key>match</key>
 									<string>\S</string>
 									<key>name</key>
-									<string>invalid.illegal.thrift</string>
+									<string>invalid.illegal.frugal</string>
 								</dict>
 							</array>
 						</dict>
@@ -435,25 +435,25 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.struct.thrift</string>
+							<string>keyword.other.struct.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.struct.thrift</string>
+							<string>entity.name.type.struct.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.struct.thrift</string>
+					<string>meta.struct.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>(?&lt;!\S)xsd_all(?!\S)</string>
 							<key>name</key>
-							<string>keyword.other.xsd-all.thrift</string>
+							<string>keyword.other.xsd-all.frugal</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -463,7 +463,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.struct.begin.thrift</string>
+									<string>punctuation.section.struct.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -473,7 +473,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.struct.end.thrift</string>
+									<string>punctuation.section.struct.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -498,18 +498,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.exception.thrift</string>
+							<string>keyword.other.exception.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.exception.thrift</string>
+							<string>entity.name.type.exception.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.exception.thrift</string>
+					<string>meta.exception.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -520,7 +520,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.exception.begin.thrift</string>
+									<string>punctuation.section.exception.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -530,7 +530,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.exception.end.thrift</string>
+									<string>punctuation.section.exception.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -555,28 +555,28 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.service.thrift</string>
+							<string>keyword.other.service.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.service.thrift</string>
+							<string>entity.name.type.service.frugal</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.service.extends.thrift</string>
+							<string>keyword.other.service.extends.frugal</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.thrift</string>
+							<string>entity.other.inherited-class.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\})|$</string>
 					<key>name</key>
-					<string>meta.service.thrift</string>
+					<string>meta.service.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -587,7 +587,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.service.begin.thrift</string>
+									<string>punctuation.section.service.begin.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -597,7 +597,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.section.service.end.thrift</string>
+									<string>punctuation.section.service.end.frugal</string>
 								</dict>
 							</dict>
 							<key>patterns</key>
@@ -624,28 +624,28 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>keyword.other.async.thrift</string>
+											<string>keyword.other.async.frugal</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>storage.type.function.thrift</string>
+											<string>storage.type.function.frugal</string>
 										</dict>
 										<key>3</key>
 										<dict>
 											<key>name</key>
-											<string>keyword.other.cpp_type.thrift</string>
+											<string>keyword.other.cpp_type.frugal</string>
 										</dict>
 										<key>4</key>
 										<dict>
 											<key>name</key>
-											<string>entity.name.function.thrift</string>
+											<string>entity.name.function.frugal</string>
 										</dict>
 									</dict>
 									<key>end</key>
 									<string>$|^</string>
 									<key>name</key>
-									<string>meta.service.function.thrift</string>
+									<string>meta.service.function.frugal</string>
 									<key>patterns</key>
 									<array>
 										<dict>
@@ -656,7 +656,7 @@
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>punctuation.definition.arguments.begin.thrift</string>
+													<string>punctuation.definition.arguments.begin.frugal</string>
 												</dict>
 											</dict>
 											<key>end</key>
@@ -666,7 +666,7 @@
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>punctuation.definition.arguments.end.thrift</string>
+													<string>punctuation.definition.arguments.end.frugal</string>
 												</dict>
 											</dict>
 											<key>patterns</key>
@@ -689,7 +689,7 @@
 												<key>1</key>
 												<dict>
 													<key>name</key>
-													<string>keyword.other.service.function.throws.thrift</string>
+													<string>keyword.other.service.function.throws.frugal</string>
 												</dict>
 											</dict>
 											<key>end</key>
@@ -704,7 +704,7 @@
 														<key>0</key>
 														<dict>
 															<key>name</key>
-															<string>punctuation.definition.arguments.begin.thrift</string>
+															<string>punctuation.definition.arguments.begin.frugal</string>
 														</dict>
 													</dict>
 													<key>end</key>
@@ -714,7 +714,7 @@
 														<key>0</key>
 														<dict>
 															<key>name</key>
-															<string>punctuation.definition.arguments.end.thrift</string>
+															<string>punctuation.definition.arguments.end.frugal</string>
 														</dict>
 													</dict>
 													<key>patterns</key>
@@ -758,7 +758,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.whitespace.comment.leading.thrift</string>
+							<string>punctuation.whitespace.comment.leading.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -773,13 +773,13 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.comment.thrift</string>
+									<string>punctuation.definition.comment.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
 							<string>\n</string>
 							<key>name</key>
-							<string>comment.line.number-sign.thrift</string>
+							<string>comment.line.number-sign.frugal</string>
 						</dict>
 					</array>
 				</dict>
@@ -791,7 +791,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.whitespace.comment.leading.thrift</string>
+							<string>punctuation.whitespace.comment.leading.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -806,13 +806,13 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.comment.thrift</string>
+									<string>punctuation.definition.comment.frugal</string>
 								</dict>
 							</dict>
 							<key>end</key>
 							<string>\n</string>
 							<key>name</key>
-							<string>comment.line.double-slash.thrift</string>
+							<string>comment.line.double-slash.frugal</string>
 						</dict>
 					</array>
 				</dict>
@@ -824,7 +824,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.begin.thrift</string>
+							<string>punctuation.definition.comment.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -834,11 +834,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.end.thrift</string>
+							<string>punctuation.definition.comment.end.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>comment.block.documentation.thrift</string>
+					<string>comment.block.documentation.frugal</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -848,7 +848,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.begin.thrift</string>
+							<string>punctuation.definition.comment.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -858,11 +858,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.end.thrift</string>
+							<string>punctuation.definition.comment.end.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>comment.block.thrift</string>
+					<string>comment.block.frugal</string>
 				</dict>
 			</array>
 		</dict>
@@ -880,12 +880,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.field-id.thrift</string>
+					<string>entity.other.field-id.frugal</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.requiredness.thrift</string>
+					<string>keyword.other.requiredness.frugal</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -895,11 +895,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.separator.fields.thrift</string>
+					<string>punctuation.separator.fields.frugal</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.field.thrift</string>
+			<string>meta.field.frugal</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -918,17 +918,17 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.field.thrift</string>
+							<string>storage.type.field.frugal</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.cpp-type.thrift</string>
+							<string>keyword.other.cpp-type.frugal</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.field-name.thrift</string>
+							<string>variable.other.field-name.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -946,13 +946,13 @@
 									<key>match</key>
 									<string>(?&lt;!\S)(xsd_optional)\b</string>
 									<key>name</key>
-									<string>keyword.other.xsd_optional.thrift</string>
+									<string>keyword.other.xsd_optional.frugal</string>
 								</dict>
 								<dict>
 									<key>match</key>
 									<string>(?&lt;!\S)(xsd_nillable)\b</string>
 									<key>name</key>
-									<string>keyword.other.xsd_nillable.thrift</string>
+									<string>keyword.other.xsd_nillable.frugal</string>
 								</dict>
 								<dict>
 									<key>include</key>
@@ -972,19 +972,19 @@
 					<key>match</key>
 					<string>[+-]?\d*\.\d+([eE][+-]?\d+)?</string>
 					<key>name</key>
-					<string>constant.numeric.float.thrift</string>
+					<string>constant.numeric.float.frugal</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>[+-]?\d+</string>
 					<key>name</key>
-					<string>constant.numeric.integer.thrift</string>
+					<string>constant.numeric.integer.frugal</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>[a-zA-Z_][\w.]*</string>
 					<key>name</key>
-					<string>constant.other.const-data.thrift</string>
+					<string>constant.other.const-data.frugal</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -994,7 +994,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.begin.thrift</string>
+							<string>punctuation.definition.string.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1004,11 +1004,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.end.thrift</string>
+							<string>punctuation.definition.string.end.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.single.thrift</string>
+					<string>string.quoted.single.frugal</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1018,7 +1018,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.begin.thrift</string>
+							<string>punctuation.definition.string.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1028,11 +1028,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.begin.thrift</string>
+							<string>punctuation.definition.string.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.double.thrift</string>
+					<string>string.quoted.double.frugal</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1042,7 +1042,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.array.begin.thrift</string>
+							<string>punctuation.definition.array.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1052,11 +1052,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.array.end.thrift</string>
+							<string>punctuation.definition.array.end.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.array.thrift</string>
+					<string>meta.array.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1077,7 +1077,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.map.begin.thrift</string>
+							<string>punctuation.definition.map.begin.frugal</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1087,11 +1087,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.map.end.thrift</string>
+							<string>punctuation.definition.map.end.frugal</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.map.thrift</string>
+					<string>meta.map.frugal</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1108,13 +1108,13 @@
 					<key>match</key>
 					<string>\S</string>
 					<key>name</key>
-					<string>invalid.illegal.thrift</string>
+					<string>invalid.illegal.frugal</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>source.thrift</string>
+	<string>source.frugal</string>
 	<key>uuid</key>
 	<string>9E5704AC-54ED-4D7C-946C-6DC3727BDC4C</string>
 </dict>

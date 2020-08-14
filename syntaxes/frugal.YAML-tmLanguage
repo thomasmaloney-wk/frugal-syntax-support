@@ -1,0 +1,251 @@
+fileTypes:
+    - frugal
+keyEquivalent: ^~T
+name: Frugal
+patterns:
+    -
+        include: '#comments'
+    -
+        captures:
+            '1':
+                name: keyword.other.include.frugal
+            '2':
+                name: string.quoted.frugal
+            '3':
+                name: punctuation.definition.string.begin.frugal
+            '4':
+                name: punctuation.definition.string.end.frugal
+        match: '(?<!\S)(include)(?!\S)(?:\s+(([''"])(?>.*?(\3))))?'
+        name: meta.include.frugal
+    -
+        captures:
+            '1':
+                name: keyword.other.cpp-include.frugal
+            '2':
+                name: string.quoted.frugal
+            '3':
+                name: punctuation.definition.string.begin.frugal
+            '4':
+                name: punctuation.definition.string.end.frugal
+        match: '(?<!\S)(cpp_include)(?!\S)(?:\s+(([''"])(?>.*?(\3))))?'
+        name: meta.cpp-include.frugal
+    -
+        captures:
+            '1':
+                name: keyword.other.namespace.frugal
+            '2':
+                name: support.other.namespace-language.frugal
+            '3':
+                name: variable.other.namespace.frugal
+        match: '(?<!\S)(namespace)(?!\S)(?:\s+([a-zA-Z_][\w.]*)(?:\s+([a-zA-Z_][\w.]*))?)?'
+        name: meta.namespace.frugal
+    -
+        captures:
+            '1':
+                name: keyword.other.namespace.frugal
+            '2':
+                name: variable.other.namespace.frugal
+        match: '(?<!\S)((?:php|xsd)_namespace)(?!\S)(?:\s+([a-zA-Z_][\w.]*))?'
+        name: meta.namespace.frugal
+    -
+        captures:
+            '1':
+                name: invalid.deprecated.namespace.frugal
+            '2':
+                name: variable.other.namespace.frugal
+        match: '(?<!\S)((?:cpp|ruby|csharp)_namespace|py_module|(?:java|perl)_package|smalltalk_(?:category|prefix)|cocoa_prefix)(?!\S)(?:\s+([a-zA-Z_][\w.]*))?'
+    -
+        begin: '(?=(struct|s?enum|union|service|const|typedef|exception)\b)'
+        comment: 'begin the definition list'
+        end: '(?x)$.^ # this regex should never end'
+        patterns:
+            -
+                include: '#comments'
+            -
+                begin: '(?<!\S)(const)(?!\S)(?:\s+(?<ft>map\s*<\s*\g<ft>\s*,\s*\g<ft>\s*>|set\s*<\s*\g<ft>\s*>|list\s*<\s*\g<ft>\s*>\s*cpp_type|[a-zA-Z_][\w.]*)(?:\s+([a-zA-Z_][\w.]*)(?:\s*=)?)?)?'
+                beginCaptures:
+                    '1': {name: keyword.other.const.frugal}
+                    '2': {name: storage.type.const.frugal}
+                    '3': {name: variable.other.const.frugal}
+                end: $|^
+                name: meta.const.frugal
+                patterns:
+                    - {include: '#comments'}
+                    - {include: '#value'}
+            -
+                begin: '(?<!\S)(typedef)(?!\S)(?:\s+(?<ft>map\s*<\s*\g<ft>\s*,\s*\g<ft>\s*>|set\s*<\s*\g<ft>\s*>|list\s*<\s*\g<ft>\s*>\s*cpp_type|[a-zA-Z_][\w.]*)(?:\s+([a-zA-Z_][\w.]*))?)?'
+                beginCaptures:
+                    '1': {name: keyword.other.typedef.frugal}
+                    '2': {name: storage.type.typedef.frugal}
+                    '3': {name: variable.other.typedef.frugal}
+                end: $|^
+                name: meta.typedef.frugal
+                patterns:
+                    - {include: '#comments'}
+            -
+                begin: '(?<!\S)(union)(?!\S)(?:\s+([a-zA-Z_][\w.]*)\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.union.frugal}
+                    '2': {name: entity.name.type.union.frugal}
+                end: '(?<=\})|$'
+                name: meta.union.frugal
+                patterns:
+                    - {match: '(?<!\S)xsd_all(?!\S)', name: keyword.other.xsd-all.frugal}
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.union.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.union.end.frugal}}, patterns: [{include: '#comments'}, {include: '#field'}]}
+            -
+                begin: '(?<!\S)(enum)(?!\S)(?:\s+([a-zA-Z_][\w.]*)\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.enum.frugal}
+                    '2': {name: entity.name.type.enum.frugal}
+                end: '(?<=\})|$'
+                name: meta.enum.frugal
+                patterns:
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.enum.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.enum.end.frugal}}, patterns: [{captures: {'1': {name: variable.other.enum.frugal}, '2': {name: constant.numeric.integer.frugal}}, match: '(?<!\S)([a-zA-Z_][\w.]*)(?:\s*=\s*(\d*)(?:\s*[,;])?)?'}, {include: '#comments'}, {match: \S, name: invalid.illegal.frugal}]}
+            -
+                begin: '(?<!\S)(senum)(?!\S)(?:\s+([a-zA-Z_][\w.]*)\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.senum.frugal}
+                    '2': {name: entity.name.type.senum.frugal}
+                end: '(?<=\})|$'
+                name: meta.senum.frugal
+                patterns:
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.senum.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.senum.end.frugal}}, patterns: [{captures: {'1': {name: variable.other.senum.frugal}}, match: '(?<!\S)([a-zA-Z_][\w.]*)(?:\s*[,;])?'}, {include: '#comments'}, {match: \S, name: invalid.illegal.frugal}]}
+            -
+                begin: '(?<!\S)(struct)(?!\S)(?:\s+([a-zA-Z_][\w.]*)\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.struct.frugal}
+                    '2': {name: entity.name.type.struct.frugal}
+                end: '(?<=\})|$'
+                name: meta.struct.frugal
+                patterns:
+                    - {match: '(?<!\S)xsd_all(?!\S)', name: keyword.other.xsd-all.frugal}
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.struct.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.struct.end.frugal}}, patterns: [{include: '#comments'}, {include: '#field'}]}
+            -
+                begin: '(?<!\S)(exception)(?!\S)(?:\s+([a-zA-Z_][\w.]*)\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.exception.frugal}
+                    '2': {name: entity.name.type.exception.frugal}
+                end: '(?<=\})|$'
+                name: meta.exception.frugal
+                patterns:
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.exception.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.exception.end.frugal}}, patterns: [{include: '#comments'}, {include: '#field'}]}
+            -
+                begin: '(?<!\S)(service)(?!\S)(?:\s+([a-zA-z_][\w.]*)(?:\s+(extends)(?:\s+([a-zA-Z_][\w.]*))?)?\s*(?![^\s{]))?'
+                beginCaptures:
+                    '1': {name: keyword.other.service.frugal}
+                    '2': {name: entity.name.type.service.frugal}
+                    '3': {name: keyword.other.service.extends.frugal}
+                    '4': {name: entity.other.inherited-class.frugal}
+                end: '(?<=\})|$'
+                name: meta.service.frugal
+                patterns:
+                    - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.service.begin.frugal}}, end: '\}', endCaptures: {'0': {name: punctuation.section.service.end.frugal}}, patterns: [{include: '#comments'}, {begin: "(?x)(?<!\\S)\n\t\t\t\t\t\t\t\t\t\t\t(async(?!\\S))?\\s*\n\t\t\t\t\t\t\t\t\t\t\t(?<ft>\n\t\t\t\t\t\t\t\t\t\t\t\tmap\\s*<\\s*\\g<ft>\\s*,\\s*\\g<ft>\\s*> |\n\t\t\t\t\t\t\t\t\t\t\t\tset\\s*<\\s*\\g<ft>\\s*> |\n\t\t\t\t\t\t\t\t\t\t\t\tlist\\s*<\\s*\\g<ft>\\s*>\\s*(cpp_type(?!\\S))? |\n\t\t\t\t\t\t\t\t\t\t\t\t(?!async\\b)[a-zA-Z_][\\w.]*\n\t\t\t\t\t\t\t\t\t\t\t)\\s*\n\t\t\t\t\t\t\t\t\t\t\t(?:\n\t\t\t\t\t\t\t\t\t\t\t\t(?<!\\S)([a-zA-Z_][\\w.]*)\\s*(?![^\\s(])\n\t\t\t\t\t\t\t\t\t\t\t)?", beginCaptures: {'1': {name: keyword.other.async.frugal}, '2': {name: storage.type.function.frugal}, '3': {name: keyword.other.cpp_type.frugal}, '4': {name: entity.name.function.frugal}}, end: $|^, name: meta.service.function.frugal, patterns: [{begin: \(, beginCaptures: {'0': {name: punctuation.definition.arguments.begin.frugal}}, end: \), endCaptures: {'0': {name: punctuation.definition.arguments.end.frugal}}, patterns: [{include: '#comments'}, {include: '#field'}]}, {begin: '(?<![^\s)])(throws)(?![^\s(])', beginCaptures: {'1': {name: keyword.other.service.function.throws.frugal}}, end: $, patterns: [{begin: \(, beginCaptures: {'0': {name: punctuation.definition.arguments.begin.frugal}}, end: \), endCaptures: {'0': {name: punctuation.definition.arguments.end.frugal}}, patterns: [{include: '#comments'}, {include: '#field'}]}]}, {include: '#comments'}]}]}
+repository:
+    comments:
+        patterns:
+            -
+                begin: '(^[ \t]+)?(?=#)'
+                beginCaptures:
+                    '1': {name: punctuation.whitespace.comment.leading.frugal}
+                end: '(?!\G)'
+                patterns:
+                    - {begin: '#', beginCaptures: {'0': {name: punctuation.definition.comment.frugal}}, end: \n, name: comment.line.number-sign.frugal}
+            -
+                begin: '(^[ \t]+)?(?=//)'
+                beginCaptures:
+                    '1': {name: punctuation.whitespace.comment.leading.frugal}
+                end: '(?!\G)'
+                patterns:
+                    - {begin: //, beginCaptures: {'0': {name: punctuation.definition.comment.frugal}}, end: \n, name: comment.line.double-slash.frugal}
+            -
+                begin: '/\*\*'
+                beginCaptures:
+                    '0': {name: punctuation.definition.comment.begin.frugal}
+                end: '\*/'
+                endCaptures:
+                    '0': {name: punctuation.definition.comment.end.frugal}
+                name: comment.block.documentation.frugal
+            -
+                begin: '/\*'
+                beginCaptures:
+                    '0': {name: punctuation.definition.comment.begin.frugal}
+                end: '\*/'
+                endCaptures:
+                    '0': {name: punctuation.definition.comment.end.frugal}
+                name: comment.block.frugal
+    field:
+        begin: "(?x)\n\t\t\t\t\t\t(?<![^\\s{(])(?=\\S)\n\t\t\t\t\t\t(\\d+\\s*:)?[ \\t]*\n\t\t\t\t\t\t(?:\t(required|optional)(?!\\S)[ \\t]*\n\t\t\t\t\t\t|\t(?=\\S)(?!=required|optional|\\d)\n\t\t\t\t\t\t)"
+        beginCaptures:
+            '1':
+                name: entity.other.field-id.frugal
+            '2':
+                name: keyword.other.requiredness.frugal
+        end: '[,;]|(?=[)#]|//|/\*)|$'
+        endCaptures:
+            '0':
+                name: punctuation.separator.fields.frugal
+        name: meta.field.frugal
+        patterns:
+            -
+                begin: "(?x)\n\t\t\t\t\t\t\t(?<ft>\n\t\t\t\t\t\t\t\tmap\\s*<\\s*\\g<ft>\\s*,\\s*\\g<ft>\\s*> |\n\t\t\t\t\t\t\t\tset\\s*<\\s*\\g<ft>\\s*> |\n\t\t\t\t\t\t\t\tlist\\s*<\\s*\\g<ft>\\s*>\\s*(cpp_type(?!\\S))? |\n\t\t\t\t\t\t\t\t[a-zA-Z_][\\w.]*\n\t\t\t\t\t\t\t)[ \\t]*\n\t\t\t\t\t\t\t(?:([a-zA-Z_][\\w.]*)[ \\t]*)? # identifier\n\t\t\t\t\t\t\t"
+                beginCaptures:
+                    '1': {name: storage.type.field.frugal}
+                    '2': {name: keyword.other.cpp-type.frugal}
+                    '3': {name: variable.other.field-name.frugal}
+                end: '(?=[,;]|[)#]|//|/\*)|$'
+                patterns:
+                    - {begin: '=', end: '(?=[,;]|[)#]|//|/\*)|$', patterns: [{match: '(?<!\S)(xsd_optional)\b', name: keyword.other.xsd_optional.frugal}, {match: '(?<!\S)(xsd_nillable)\b', name: keyword.other.xsd_nillable.frugal}, {include: '#value'}]}
+    value:
+        patterns:
+            -
+                match: '[+-]?\d*\.\d+([eE][+-]?\d+)?'
+                name: constant.numeric.float.frugal
+            -
+                match: '[+-]?\d+'
+                name: constant.numeric.integer.frugal
+            -
+                match: '[a-zA-Z_][\w.]*'
+                name: constant.other.const-data.frugal
+            -
+                begin: ''''
+                beginCaptures:
+                    '0': {name: punctuation.definition.string.begin.frugal}
+                end: ''''
+                endCaptures:
+                    '0': {name: punctuation.definition.string.end.frugal}
+                name: string.quoted.single.frugal
+            -
+                begin: '"'
+                beginCaptures:
+                    '0': {name: punctuation.definition.string.begin.frugal}
+                end: '"'
+                endCaptures:
+                    '0': {name: punctuation.definition.string.begin.frugal}
+                name: string.quoted.double.frugal
+            -
+                begin: '\['
+                beginCaptures:
+                    '0': {name: punctuation.definition.array.begin.frugal}
+                end: '\]'
+                endCaptures:
+                    '0': {name: punctuation.definition.array.end.frugal}
+                name: meta.array.frugal
+                patterns:
+                    - {match: '[,;]'}
+                    - {include: '#value'}
+            -
+                begin: '\{'
+                beginCaptures:
+                    '0': {name: punctuation.definition.map.begin.frugal}
+                end: '\}'
+                endCaptures:
+                    '0': {name: punctuation.definition.map.end.frugal}
+                name: meta.map.frugal
+                patterns:
+                    - {match: '[:,;]'}
+                    - {include: '#value'}
+            -
+                match: \S
+                name: invalid.illegal.frugal
+scopeName: source.frugal
+uuid: 9E5704AC-54ED-4D7C-946C-6DC3727BDC4C
