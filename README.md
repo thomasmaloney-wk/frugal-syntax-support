@@ -1,6 +1,8 @@
-# thrift-syntax-support
+# frugal-syntax-support
 
-Thrift syntax support extension.
+Frugal syntax support extension.
+
+This extension is a fork of https://github.com/MrKou47/thrift-syntax-support
 
 # Features
 
