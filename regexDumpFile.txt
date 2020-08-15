@@ -1,0 +1,2 @@
+original regex for scope:
+(?<!\S)(scope)(?!\S)(?:\s+([a-zA-z_][\w.]*)(?:\s+(prefix)(?:\s+([a-zA-Z_][\w.]*))?)?({([a-zA-Z^}]+)})?\s*(?![^\s{]))?

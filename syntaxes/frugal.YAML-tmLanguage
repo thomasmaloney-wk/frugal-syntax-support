@@ -164,8 +164,19 @@ patterns:
       '1': {name: keyword.other.scope.frugal}
       '2': {name: entity.name.type.scope.frugal}
       '3': {name: keyword.other.scope.prefix.frugal}
-      '4': {name: entity.other.prefixe-topic.frugal}
+      '4': {name: entity.other.prefix-topic.frugal}
+      '5': {name: entity.other.prefix-var.frugal}
     end: (?<=\})
+    patterns: 
+    - begin: \{
+      beginCaptures:
+        '0': {name: punctuation.section.scope.begin.frugal}
+      end: \}
+      endCaptures:
+        '0': {name: punctuation.section.scope.end.frugal}
+      patterns:
+      - include: '#comments'
+      - include: '#field'
   - name: meta.service.frugal
     begin: (?<!\S)(service)(?!\S)(?:\s+([a-zA-z_][\w.]*)(?:\s+(extends)(?:\s+([a-zA-Z_][\w.]*))?)?\s*(?![^\s{]))?
     beginCaptures:

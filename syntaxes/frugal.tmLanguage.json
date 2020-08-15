@@ -85,7 +85,7 @@
     },
     {
       "comment": "begin the definition list",
-      "begin": "(?=(struct|s?enum|union|service|const|typedef|exception)\\b)",
+      "begin": "(?=(struct|s?enum|union|service|const|typedef|scope|exception)\\b)",
       "end": "(?x)$.^ # this regex should never end",
       "patterns": [
         {
@@ -337,6 +337,52 @@
               "endCaptures": {
                 "0": {
                   "name": "punctuation.section.exception.end.frugal"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#field"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "meta.scope.frugal",
+          "begin": "(?<!\\S)(scope)(?!\\S)(?:\\s+([a-zA-z_][\\w.]*)(?:\\s+(prefix)(?:\\s+([a-zA-Z_][\\w.]*))?)?({([a-zA-Z^}]+)})?\\s*(?![^\\s{]))?",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.scope.frugal"
+            },
+            "2": {
+              "name": "entity.name.type.scope.frugal"
+            },
+            "3": {
+              "name": "keyword.other.scope.prefix.frugal"
+            },
+            "4": {
+              "name": "entity.other.prefix-topic.frugal"
+            },
+            "5": {
+              "name": "entity.other.prefix-var.frugal"
+            }
+          },
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "begin": "\\{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.scope.begin.frugal"
+                }
+              },
+              "end": "\\}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.scope.end.frugal"
                 }
               },
               "patterns": [
